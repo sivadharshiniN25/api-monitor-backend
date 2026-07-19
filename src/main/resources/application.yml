@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/api_monitor
+    username: postgres
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your_email@gmail.com
+    password: your_app_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ThisIsMyVerySecretKeyForApiMonitoringProject123456789
+  expiration: 604800000
+
+server:
+  port: 8080
+
+cors:
+  allowed-origins: http://localhost:5173
+
+async:
+  core-pool-size: 5
+  max-pool-size: 20
+  queue-capacity: 100
